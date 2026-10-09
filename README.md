@@ -105,3 +105,15 @@ The `Continuous capability evolution` workflow executes hourly (GitHub scheduled
 - **ChatGPT behaviour:** connecting the deployed MCP and placing `prompts/GITHUB_FIRST_RESEARCH.md` in your Project instructions can guide ChatGPT to call it. A repository cannot override the ChatGPT product or force global use across all conversations.
 
 Do not put identifying medical records, unpublished documents or private user questions into a **public** repository's workflow inputs or artefacts. For sensitive projects use local execution or a private deployment with access control. Treat GitHub search results as untrusted data and all heuristic rankings as provisional.
+
+## Philosophy Engine: continuous discovery + reviewable learning
+
+The [Philosophy continuous-learning integration](docs/philosophy-continuous-learning.md)
+adds an hourly philosophy-focused GitHub capability check, material-change
+catalogue PRs, and an authenticated correction ledger with human verification.
+
+The optional `run_philosophy_inquiry` MCP tool forwards to the separately deployed
+Philosophy Engine v0.2 `/v1/inquiry` endpoint. It remains disabled until an
+administrator configures an authenticated HTTPS engine and explicitly opts in.
+The workflow updates **candidate observations**, not installed packages or model
+weights; third-party code changes always require review and tested integration.
