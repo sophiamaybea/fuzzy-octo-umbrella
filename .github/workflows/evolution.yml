@@ -1,0 +1,79 @@
+name: Continuous capability evolution
+on:
+  schedule:
+    - cron: '37 * * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Public/non-sensitive research topic for live repository discovery'
+        required: false
+        default: 'biomedical scientific philosophical evidence research'
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: reviewable-capability-evolution
+  cancel-in-progress: false
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install only our own pinned-by-repo project
+        run: python -m pip install '.[dev]'
+      - name: Check tests before proposing changes
+        run: python -m pytest -q
+      - name: Resume bot catalogue branch if present
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads origin bot/capability-catalogue >/dev/null; then
+            git fetch origin bot/capability-catalogue
+            git checkout -B bot/capability-catalogue FETCH_HEAD
+          else
+            git checkout -b bot/capability-catalogue
+          fi
+      - name: Fresh GitHub discovery and safe catalogue update
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RESEARCH_TASK: ${{ github.event.inputs.topic || 'biomedical scientific philosophical evidence research' }}
+        run: |
+          python -m capability_hunter.evolution \
+            --task "$RESEARCH_TASK" \
+            --no-literature \
+            --limit 6 \
+            --catalogue data/capability_catalogue.json \
+            --report evolution-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capability-evolution-report
+          path: evolution-report.json
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Push catalogue proposal (never merge automatically)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/capability_catalogue.json; then
+            echo 'No catalogue changes to propose'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/capability_catalogue.json
+          git commit -m "chore: record verified-live GitHub capability observations"
+          git push origin HEAD:bot/capability-catalogue
+          if [ "$(gh pr list --base main --head bot/capability-catalogue --state open --json number --jq 'length')" = "0" ]; then
+            gh pr create --base main --head bot/capability-catalogue \
+              --title "Review: continually refreshed research capability catalogue" \
+              --body "Automated discovery only: public GitHub repository metadata, heuristic rankings and source SHA pointers. No external code was installed or executed. Review licences, trust, integration tests and performance before adopting any candidate. Do not merge without human review."
+          fi
