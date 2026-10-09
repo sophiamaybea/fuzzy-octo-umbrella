@@ -69,3 +69,36 @@ These tools return DOI-linked records, source provenance, dates, short abstracts
 Set the Authorization header to Bearer YOUR_RESEARCH_API_KEY. Do not put secrets in browser JavaScript or the repository. Optional provider settings: OPENALEX_API_KEY, CROSSREF_CONTACT_EMAIL. See docs/research-gateway.md for setup and limitations.
 
 The existing Dockerfile, Render blueprint and /mcp path are reused. Hosted MCP authentication and quotas are **not yet implemented**, so restrict deployment access before large-scale production use.
+
+
+## GitHub-first research and continuous capability evolution (v0.3)
+
+**New:** `research_with_fresh_github_discovery(task, limit=6, include_literature=true)` is a single MCP tool for ChatGPT to call at the beginning of a research task. Every invocation executes **fresh public GitHub Search API requests** (normally 2–4 targeted searches), ranks candidates, reads bounded source material for two candidates, then optionally searches scholarly metadata through the existing OpenAlex/Crossref/Europe PMC adapter. If every GitHub search fails, the task fails closed rather than silently skipping discovery. Results explicitly distinguish available tools from **candidate code not installed**.
+
+The equivalent authenticated REST endpoint is `POST /api/v1/research/auto` with JSON `{"task":"postpartum psychosis research","limit":6,"include_literature":true}` and `Authorization: Bearer <RESEARCH_API_KEY>`. It uses the same REST key protection as other research routes. **The generic remote MCP endpoint still lacks production-grade per-user authentication.** Restrict access appropriately before adding an external connector.
+
+To run locally:
+
+```bash
+python -m pip install '.[dev]'
+python -m pytest -q
+python -m capability_hunter.evolution --task "biomedical experimental research" --no-literature
+python -m capability_hunter.evolution --task "Socratic reasoning research" --report reports/socratic.json
+```
+
+This writes a full source-linked run report and incrementally updates `data/capability_catalogue.json`, a provenance-bearing, bounded ledger of public repo candidates. The catalogue is **not** a downloaded package manager, tool registry, approved skill list, executable program, learned model, or evidence of independent research quality. It never automatically executes third-party code.
+
+### Continuous learning through GitHub Actions
+
+The `Continuous capability evolution` workflow executes hourly (GitHub scheduled jobs can be delayed or skipped) and accepts a public research topic from **Actions → Continuous capability evolution → Run workflow**. It runs tests, searches GitHub anew, updates the catalogue, and commits the changes to `bot/capability-catalogue`. It opens or updates one **human-reviewed pull request** rather than merging or installing arbitrary upstream code. Every successful scheduled run records observations in its artifact; if it discovers no improvement, that is reported rather than fabricated.
+
+**Important repository setting:** GitHub Actions needs `Read and write permissions` and `Allow GitHub Actions to create and approve pull requests` enabled for the workflow to open PRs. If these are not enabled, the workflow may fail at the push/PR stage. The workflow requests scoped `contents: write` and `pull-requests: write` permissions, but repository/org policy can still override them.
+
+### What is and is not autonomous
+
+- **Automatically done on invocation:** live GitHub discovery, ranking, bounded source inspection, scholarly *source discovery* when selected, auditable candidate evolution.
+- **Automatically done by Actions after activation:** hourly monitoring, tests and pull-request proposals.
+- **Not automatically done:** importing or training on GitHub code, integrating Biomni/PaperQA2/GPT Researcher, running external science code, verifying a repository is safe or best, deploying a new adapter, or merging any PR.
+- **ChatGPT behaviour:** connecting the deployed MCP and placing `prompts/GITHUB_FIRST_RESEARCH.md` in your Project instructions can guide ChatGPT to call it. A repository cannot override the ChatGPT product or force global use across all conversations.
+
+Do not put identifying medical records, unpublished documents or private user questions into a **public** repository's workflow inputs or artefacts. For sensitive projects use local execution or a private deployment with access control. Treat GitHub search results as untrusted data and all heuristic rankings as provisional.
