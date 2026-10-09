@@ -192,3 +192,63 @@ def inspect_local_imaging_header(filename: str) -> dict:
             ],
         }
     raise ValueError("Supported local formats: .nii, .nii.gz, .dcm, .dicom")
+
+
+def measure_local_binary_roi_mask(filename: str) -> dict:
+    """Compute physical volume of a *pre-existing* binary 3D NIfTI ROI mask.
+
+    Requires reviewed masks and millimetre spatial units. Never segments a
+    structure or infers disease. Run locally only: image voxels stay on device.
+    """
+    if not isinstance(filename, str) or not filename.strip():
+        raise ValueError("Provide a local .nii or .nii.gz mask path")
+    path = Path(filename).expanduser()
+    if not path.is_file():
+        raise ValueError("Local mask file not found")
+    if not path.name.lower().endswith((".nii", ".nii.gz")):
+        raise ValueError("Mask must be a local .nii or .nii.gz file")
+    try:
+        import numpy as np
+        import nibabel as nib
+    except ImportError as exc:
+        raise RuntimeError("Install optional local imaging packages: pip install '.[imaging]'") from exc
+    image = nib.load(str(path))
+    if len(image.shape) != 3:
+        raise ValueError("Mask must have exactly three spatial dimensions")
+    if any(int(dim) < 1 for dim in image.shape):
+        raise ValueError("Mask dimensions must be positive")
+    total = math.prod(int(dim) for dim in image.shape)
+    if total > 32_000_000:
+        raise ValueError("Mask exceeds local memory safety limit of 32 million voxels")
+    unit = image.header.get_xyzt_units()[0]
+    if unit != "mm":
+        raise ValueError("Mask must explicitly declare millimetre spatial units")
+    matrix = np.asarray(image.affine[:3, :3], dtype=float)
+    voxel_volume_mm3 = float(abs(np.linalg.det(matrix)))
+    if not math.isfinite(voxel_volume_mm3) or voxel_volume_mm3 <= 0:
+        raise ValueError("Invalid spatial affine: physical volume cannot be calculated")
+    data = np.asanyarray(image.dataobj)
+    if not bool(np.isfinite(data).all()):
+        raise ValueError("ROI mask contains non-finite values")
+    if not bool(((data == 0) | (data == 1)).all()):
+        raise ValueError("ROI mask must be binary (voxel values exactly 0 or 1)")
+    count = int(np.count_nonzero(data))
+    mm3 = count * voxel_volume_mm3
+    return {
+        "status": "LOCAL_QUANTITATIVE_ROI_ONLY_NOT_DIAGNOSIS",
+        "format": "NIfTI binary ROI mask",
+        "dimensions": [int(dim) for dim in image.shape],
+        "mask_voxel_count": count,
+        "voxel_volume_mm3": round(voxel_volume_mm3, 6),
+        "mask_volume_mm3": round(mm3, 4),
+        "mask_volume_ml": round(mm3 / 1000, 6),
+        "measurement": "Space occupied by mask=1 voxels in this image's affine coordinates.",
+        "warnings": [
+            "Mask must be externally verified; a numerical ROI is not an anatomical diagnosis.",
+            "Mask volume depends on segmentation, partial volume, preprocessing and registration.",
+            "Neither motivation, intention, behaviour nor clinical abnormality was inferred.",
+            "Do not compare masks from different protocols without spatial/segmentation QC.",
+        ],
+        "contains_identifying_file_metadata": False,
+        "raw_image_uploaded": False,
+    }
