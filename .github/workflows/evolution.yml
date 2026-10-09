@@ -63,7 +63,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- data/capability_catalogue.json; then
+          git add data/capability_catalogue.json
+          if git diff --cached --quiet; then
             echo 'No catalogue changes to propose'
             exit 0
           fi
