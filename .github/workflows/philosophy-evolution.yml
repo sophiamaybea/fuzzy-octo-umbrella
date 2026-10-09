@@ -1,0 +1,68 @@
+name: Philosophy capability evolution
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: philosophy-catalogue-evolution
+  cancel-in-progress: false
+jobs:
+  reviewable-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev]'
+      - name: Regression tests, including philosophy learning safety checks
+        run: python -m pytest -q
+      - name: Switch to existing philosophy proposals branch if present
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads origin bot/philosophy-capabilities >/dev/null; then
+            git fetch origin bot/philosophy-capabilities
+            git checkout -B bot/philosophy-capabilities FETCH_HEAD
+          else
+            git checkout -b bot/philosophy-capabilities
+          fi
+      - name: Fresh public GitHub capability check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m capability_hunter.philosophy_evolution \
+            --catalogue catalogues/philosophy_capabilities.json \
+            --report reports/philosophy-evolution.json
+      - name: Save report (not private user research)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: philosophy-discovery-report
+          path: reports/philosophy-evolution.json
+          retention-days: 14
+          if-no-files-found: ignore
+      - name: Open or update reviewable catalogue PR, never merge
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add catalogues/philosophy_capabilities.json
+          if git diff --cached --quiet; then
+            echo 'No material candidate change. Existing code and verified lessons unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(philosophy): update reviewable repository candidates'
+          git push origin HEAD:bot/philosophy-capabilities
+          if [ "$(gh pr list --base main --head bot/philosophy-capabilities --state open --json number --jq 'length')" = '0' ]; then
+            gh pr create --base main --head bot/philosophy-capabilities \
+              --title 'Review: philosophy capability discovery changes' \
+              --body 'Automated GitHub discovery only. Candidate metadata and source SHA pointers, not installed or executed third-party code. Human review required for integrations, licence/security checks and deployments.'
+          fi

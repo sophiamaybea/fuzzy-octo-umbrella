@@ -17,6 +17,8 @@ from .domain_router import plan_specialist_tools
 from .domain_discovery import discover_specialist_repositories
 from .research import ResearchError, search_scholarship, research_dossier, lookup_doi_metadata
 from .evolution import DiscoveryRequiredError, run_research
+from .philosophy_bridge import run_inquiry
+from .philosophy_learning import record_correction, list_lessons, review_correction
 
 mcp = MCPServer("GitHub Capability Hunter")
 
@@ -90,6 +92,28 @@ def research_with_fresh_github_discovery(
     Each call searches and inspects current GitHub candidates. Never installs tools.
     """
     return run_research(task, limit, include_literature)
+
+
+
+@mcp.tool()
+def run_philosophy_inquiry(question: str, passage: str | None = None,
+                           critique: str | None = None) -> dict:
+    """Execute the configured Philosophy Engine's structured inquiry; disabled by default.
+
+    Forwards data ONLY when the host admin explicitly enables the HTTPS bridge.
+    """
+    return run_inquiry(question, passage, critique)
+
+
+@mcp.tool()
+def list_verified_philosophy_lessons(limit: int = 20) -> dict:
+    """Read human-reviewed corrections only when the administrator opts in.
+
+    This is retrieval-based feedback, not model-weight updates or independent truth.
+    """
+    if os.getenv("PHILOSOPHY_EXPOSE_VERIFIED_LESSONS") != "1":
+        return {"status": "DISABLED", "reason": "Private correction retrieval is not enabled."}
+    return {"status": "HUMAN_VERIFIED_FEEDBACK", "lessons": list_lessons(limit=limit)}
 
 
 def _require_research_key(request: Request):
@@ -175,6 +199,65 @@ async def auto_research_api(request: Request):
         return JSONResponse({"error": "invalid JSON object"}, status_code=400)
     return await _api_result(lambda: run_research(
         data.get("task", ""), data.get("limit", 6), data.get("include_literature", True)
+    ))
+
+
+
+@mcp.custom_route("/api/v1/philosophy/corrections", methods=["POST"])
+async def philosophy_corrections_api(request: Request):
+    """Store a private, untrusted suggestion. Never approve it automatically."""
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    body = await request.body()
+    if len(body) > 7000:
+        return JSONResponse({"error": "body too large"}, status_code=413)
+    try:
+        data = json.loads(body)
+        if not isinstance(data, dict):
+            raise ValueError("Expected JSON object")
+    except (ValueError, UnicodeDecodeError):
+        return JSONResponse({"error": "invalid JSON object"}, status_code=400)
+    return await _api_result(lambda: record_correction(
+        data.get("question", ""), data.get("alleged_error", ""),
+        data.get("proposed_correction", ""), data.get("evidence_url", "")
+    ))
+
+
+@mcp.custom_route("/api/v1/philosophy/lessons", methods=["GET"])
+async def philosophy_lessons_api(request: Request):
+    """Private lookup: unlike the MCP list tool this always requires an API key."""
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    return await _api_result(lambda: {
+        "status": "HUMAN_REVIEWED_FEEDBACK_NOT_MODEL_TRAINING",
+        "lessons": list_lessons(
+            status=request.query_params.get("status", "VERIFIED"),
+            limit=int(request.query_params.get("limit", "20")),
+        ),
+    })
+
+
+@mcp.custom_route("/api/v1/philosophy/review", methods=["POST"])
+async def philosophy_review_api(request: Request):
+    """Separate admin key. Never expose approval as an unauthenticated MCP tool."""
+    key = os.getenv("PHILOSOPHY_REVIEW_KEY", "")
+    if not key:
+        return JSONResponse({"error": "review endpoint disabled"}, status_code=503)
+    if not hmac.compare_digest(request.headers.get("authorization", ""), "Bearer " + key):
+        return JSONResponse({"error": "unauthorised"}, status_code=401)
+    body = await request.body()
+    if len(body) > 3500:
+        return JSONResponse({"error": "body too large"}, status_code=413)
+    try:
+        data = json.loads(body)
+        if not isinstance(data, dict):
+            raise ValueError("Expected JSON object")
+    except (ValueError, UnicodeDecodeError):
+        return JSONResponse({"error": "invalid JSON object"}, status_code=400)
+    return await _api_result(lambda: review_correction(
+        data.get("id", ""), data.get("decision", ""), data.get("reviewer_note", "")
     ))
 
 
