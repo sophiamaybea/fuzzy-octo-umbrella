@@ -16,6 +16,7 @@ from typing import Callable
 from .analysis import discover, inspect
 from .github import GitHubClient, GitHubError
 from .research import ResearchError, research_dossier
+from .domain_router import plan_specialist_tools
 
 DOMAIN_QUERIES = {
     "biomedical": ("biomedical research mcp", "bioinformatics research agent"),
@@ -39,6 +40,8 @@ class DiscoveryRequiredError(RuntimeError):
 
 def domains_for(task: str) -> list[str]:
     names = [name for name, term in DOMAIN_TERMS.items() if re.search(term, task, re.I)]
+    if plan_specialist_tools(task)["domain"] == "biology" and "biomedical" not in names:
+        names.insert(0, "biomedical")
     return names or ["general"]
 
 
@@ -48,6 +51,11 @@ def queries_for(task: str) -> list[str]:
         raise ValueError("Task must contain between 3 and 400 characters")
     domains = domains_for(task)
     queries = []
+    if "biomedical" in domains:
+        queries.append(DOMAIN_QUERIES["biomedical"][0])
+        specialist = plan_specialist_tools(task)
+        queries.extend(q.replace(" GitHub", "")[:180]
+                       for q in specialist.get("github_discovery_queries", [])[:2])
     for domain in domains + ["general"]:
         for q in DOMAIN_QUERIES[domain]:
             if q not in queries:
@@ -116,10 +124,12 @@ def run_research(
             client.http.close()
 
     primary = domains_for(task)
+    specialist_plan = plan_specialist_tools(task)
     result = {
         "task": task.strip(),
         "run_at_utc": datetime.now(timezone.utc).isoformat(),
         "domains": primary,
+        "specialist_plan": specialist_plan,
         "github_discovery": {
             "mandatory": True, "attempted": True, "successful_searches": successes,
             "queries": queries, "errors": failures,
