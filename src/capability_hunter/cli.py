@@ -9,6 +9,7 @@ from .catalogue import connect, list_records, review, upsert
 from .github import GitHubClient
 from .task_router import compile_task
 from .domain_router import plan_specialist_tools
+from .neuroimaging import inspect_local_imaging_header, plan_neuroimaging_research
 from .domain_discovery import discover_specialist_repositories
 
 def dump(value):
@@ -57,7 +58,19 @@ def main():
     p.add_argument("--live", action="store_true", help="Check candidate metadata and search GitHub")
     p.add_argument("--limit", type=int, default=5)
 
+    p = subs.add_parser("imaging-plan", help="Design a non-diagnostic imaging research protocol")
+    p.add_argument("question")
+
+    p = subs.add_parser("imaging-inspect", help="Inspect one local DICOM/NIfTI header; no upload")
+    p.add_argument("path", help="Local image file; never commit source images or metadata")
+
     args = parser.parse_args()
+    if args.cmd == "imaging-plan":
+        dump(plan_neuroimaging_research(args.question))
+        return
+    if args.cmd == "imaging-inspect":
+        dump(inspect_local_imaging_header(args.path))
+        return
     if args.cmd == "specialist":
         dump(discover_specialist_repositories(args.task, args.limit) if args.live
              else plan_specialist_tools(args.task, args.limit))
