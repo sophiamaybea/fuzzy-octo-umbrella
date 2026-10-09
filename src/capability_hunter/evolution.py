@@ -25,7 +25,7 @@ DOMAIN_QUERIES = {
     "general": ("deep research agent", "research tools mcp"),
 }
 DOMAIN_TERMS = {
-    "biomedical": r"\b(biolog\w*|biomed\w*|genom\w*|medic\w*|clinical|health\w*|psychiatr\w*|neuroscien\w*|disease|pubmed|biomni|perinatal)\b",
+    "biomedical": r"\b(biolog\w*|biomed\w*|genom\w*|medic\w*|clinical|health\w*|psychiatr\w*|neuroscien\w*|disease|pubmed|biomni|perinatal|postpartum|psychosis)\b",
     "philosophy": r"\b(philosoph\w*|socrati\w*|argument\w*|rhetoric|debate|epistem\w*|logic|ethic\w*)\b",
     "software": r"\b(github|program\w*|api|code|develop\w*|app|mcp|repository|software|build)\b",
     "research": r"\b(research\w*|academic|study|literature|papers?|evidence|systematic|experiment\w*)\b",
