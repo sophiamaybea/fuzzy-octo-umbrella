@@ -120,6 +120,14 @@ def _finite_list(items: object, limit: int = 4) -> list[float | None]:
         return []
 
 
+def _safe_modality(raw: object) -> str:
+    """DICOM value allowlist: do not echo arbitrary text from untrusted headers."""
+    value = str(raw).upper().strip() if raw is not None else ""
+    return value if value in {
+        "MR", "CT", "PT", "NM", "US", "DX", "CR", "MG", "XA", "RF"
+    } else "UNKNOWN"
+
+
 def inspect_local_imaging_header(filename: str) -> dict:
     """Inspect a single local NIfTI/DICOM header without returning PHI or path.
 
@@ -169,7 +177,7 @@ def inspect_local_imaging_header(filename: str) -> dict:
         dataset = pydicom.dcmread(str(path), stop_before_pixels=True, specific_tags=allowed)
         return {
             **common, "format": "DICOM",
-            "modality": str(getattr(dataset, "Modality", "UNKNOWN"))[:12],
+            "modality": _safe_modality(getattr(dataset, "Modality", None)),
             "rows": int(getattr(dataset, "Rows", 0) or 0),
             "columns": int(getattr(dataset, "Columns", 0) or 0),
             "pixel_spacing": _finite_list(getattr(dataset, "PixelSpacing", ())),
