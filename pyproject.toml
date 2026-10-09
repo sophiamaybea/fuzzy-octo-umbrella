@@ -17,6 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
+imaging = ["nibabel>=5,<7", "pydicom>=3,<5"]
 
 [project.scripts]
 capability-hunter = "capability_hunter.cli:main"
