@@ -116,8 +116,11 @@ and structural/functional imaging questions. Use `capability-hunter imaging-plan
 
 For authorised data **on your own machine**, opt in with `pip install -e
 '.[imaging]'` and use `capability-hunter imaging-inspect /path/to/scan.nii.gz`
-(or one `.dcm` instance). Only basic header metadata is inspected. This does not
-find lesions, decode thoughts, infer motivations or provide clinical diagnoses.
+(or one `.dcm` instance). For pre-existing validated binary NIfTI segmentation masks,
+`capability-hunter imaging-mask-volume /path/to/mask.nii.gz` quantifies the
+ROI volume using image geometry, locally and without uploading scan data.
+The header inspector itself reads no voxel data. Neither command finds
+lesions, decodes thoughts, infers motivations or provides diagnoses.
 No remote MCP scan upload endpoint has been added. See
 [the neuroimaging guide](docs/neuroimaging-research.md) for privacy safeguards,
 upstream candidates, scientific limitations and proposed validated pipelines.
