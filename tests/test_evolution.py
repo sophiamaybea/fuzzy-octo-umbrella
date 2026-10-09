@@ -48,6 +48,8 @@ def test_queries_are_bounded_domain_specific():
     assert "philosophy" in domains_for("Socratic argument")
     assert queries_for("postpartum psychosis research")[0] == "biomedical research mcp"
     assert len(queries_for("software research medical philosophy")) <= 4
+    assert "biomedical" in domains_for("analyse single-cell RNA-seq counts")
+    assert any("single cell" in q for q in queries_for("analyse single-cell RNA-seq counts"))
     with pytest.raises(ValueError):
         queries_for("")
 
