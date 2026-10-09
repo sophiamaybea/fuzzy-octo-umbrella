@@ -1,0 +1,7 @@
+# One discovery topic per line.
+model context protocol tools
+reasoning argument mining
+scientific experiment simulation python
+knowledge graph reasoning
+web interaction animation
+retrieval augmented generation

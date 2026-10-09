@@ -1,0 +1,25 @@
+name: Public capability discovery
+on:
+  schedule:
+    - cron: '12 * * * *'
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install .
+      - name: Discover, annotate and export public candidates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: capability-hunter scan --queries config/queries.txt --out discovery-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-capability-discovery
+          path: discovery-report.json
+          retention-days: 30

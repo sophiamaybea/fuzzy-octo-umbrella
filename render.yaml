@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: capability-hunter-mcp
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
