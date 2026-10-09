@@ -9,6 +9,7 @@ from starlette.responses import JSONResponse
 from .analysis import compare, discover, inspect, make_context_pack, propose_integration
 from .catalogue import connect, list_records
 from .github import GitHubClient
+from .task_router import compile_task
 
 mcp = MCPServer("GitHub Capability Hunter")
 
@@ -50,6 +51,11 @@ def list_reviewed_capabilities(status: str = "APPROVED", limit: int = 30) -> lis
     """Read the local review ledger. Cannot remotely approve or activate new tools."""
     with connect() as db:
         return list_records(db, status=status, limit=limit)
+
+@mcp.tool()
+def compile_task_brief(task: str, available_tools: list[str] | None = None) -> dict:
+    """Build an inspectable execution prompt; does not itself optimise, install or execute."""
+    return compile_task(task, available_tools)
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health(_request: Request):

@@ -7,6 +7,7 @@ from pathlib import Path
 from .analysis import compare, discover, inspect, make_context_pack, propose_integration
 from .catalogue import connect, list_records, review, upsert
 from .github import GitHubClient
+from .task_router import compile_task
 
 def dump(value):
     print(json.dumps(value, indent=2, ensure_ascii=False))
@@ -45,7 +46,14 @@ def main():
     p.add_argument("--note", required=True)
     p.add_argument("--db")
 
+    p = subs.add_parser("compile", help="Generate an execution brief without running external tools")
+    p.add_argument("task")
+    p.add_argument("--tool", action="append", default=[], help="Caller-reported tool, not verified")
+
     args = parser.parse_args()
+    if args.cmd == "compile":
+        dump(compile_task(args.task, args.tool))
+        return
     if args.cmd == "registry":
         with connect(args.db) as db:
             dump(list_records(db, status=args.status))

@@ -44,3 +44,7 @@ The official [GitHub MCP server](https://github.com/github/github-mcp-server) al
 Candidate integrations to evaluate: [Repomix](https://github.com/yamadashy/repomix), [Gitingest](https://github.com/coderamp-labs/gitingest), [repo-to-skill](https://github.com/zhangguiping-xydt/repo-to-skill), [Crawl4AI RAG MCP](https://github.com/coleam00/mcp-crawl4ai-rag).
 
 See `SECURITY.md` and `AGENTS.md`. Project licensed MIT. Third-party licences remain independent.
+
+## Capability-aware task execution briefs
+
+Run `capability-hunter compile 'your task'` to generate a structured, faithful task brief without model or network calls. With the deployed MCP gateway connected, assistants can call `compile_task_brief`. Copy [the reusable orchestration prompt](prompts/AUTO_CAPABILITY_ORCHESTRATOR.md) into a supported instruction context to guide actual execution with already-connected tools. See [prompt optimisation architecture](docs/prompt-optimisation.md). The compiler does **not** improve the model's weights or automatically install GitHub tools.

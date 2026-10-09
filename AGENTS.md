@@ -7,3 +7,6 @@
 5. A candidate is not an installed tool simply because it is approved.
 6. Distinguish observed facts, inference, unverified claims and unknowns.
 7. Prefer narrow, permission-scoped MCP tools over unconstrained shell access.
+
+8. For task routing, follow `prompts/AUTO_CAPABILITY_ORCHESTRATOR.md` and use the `compile_task_brief` MCP tool or local `compile` command as an execution brief, not as an execution result.
+9. Never claim that a discovered prompt/repository is connected, deployed, or empirically optimised unless independently verified.
