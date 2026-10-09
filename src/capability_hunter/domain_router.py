@@ -144,7 +144,8 @@ def plan_specialist_tools(task: str, max_candidates: int = 5, max_rounds: int = 
         raise ValueError("max_candidates must be between 1 and 15")
     if not isinstance(max_rounds, int) or not 1 <= max_rounds <= 5:
         raise ValueError("max_rounds must be between 1 and 5")
-    if not _matches(task, BIOLOGY_SIGNALS):
+    if not (_matches(task, BIOLOGY_SIGNALS) or
+            any(_matches(task, patterns) for patterns in SUBFIELDS.values())):
         return {
             "domain": "unclassified",
             "status": "DISCOVERY_REQUIRED",
