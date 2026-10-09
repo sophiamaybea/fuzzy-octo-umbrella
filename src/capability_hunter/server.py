@@ -1,6 +1,9 @@
 """Stateless, remote, read-only MCP gateway for public GitHub capability discovery."""
 from __future__ import annotations
 import os
+import asyncio
+import hmac
+import json
 from mcp.server.mcpserver import MCPServer
 from mcp.server.transport_security import TransportSecuritySettings
 from starlette.requests import Request
@@ -10,6 +13,7 @@ from .analysis import compare, discover, inspect, make_context_pack, propose_int
 from .catalogue import connect, list_records
 from .github import GitHubClient
 from .task_router import compile_task
+from .research import ResearchError, search_scholarship, research_dossier, lookup_doi_metadata
 
 mcp = MCPServer("GitHub Capability Hunter")
 
@@ -56,6 +60,79 @@ def list_reviewed_capabilities(status: str = "APPROVED", limit: int = 30) -> lis
 def compile_task_brief(task: str, available_tools: list[str] | None = None) -> dict:
     """Build an inspectable execution prompt; does not itself optimise, install or execute."""
     return compile_task(task, available_tools)
+
+
+@mcp.tool()
+def search_scholarly_literature(question: str, limit: int = 10, domain: str = "general") -> dict:
+    """Research OpenAlex, Crossref and Europe PMC; return source-linked paper metadata."""
+    return search_scholarship(question, limit, domain)
+
+@mcp.tool()
+def build_research_dossier(question: str, limit: int = 10, domain: str = "general") -> dict:
+    """Produce an auditable starting literature index and verification questions."""
+    return research_dossier(question, limit, domain)
+
+@mcp.tool()
+def look_up_paper_doi(doi: str) -> dict:
+    """Retrieve an exact DOI's Crossref metadata from a fixed scholarly API."""
+    return lookup_doi_metadata(doi)
+
+
+def _require_research_key(request: Request):
+    key = os.getenv("RESEARCH_API_KEY", "")
+    if not key:
+        return JSONResponse({"error": "REST API disabled; set RESEARCH_API_KEY"}, status_code=503)
+    if not hmac.compare_digest(request.headers.get("authorization", ""), "Bearer " + key):
+        return JSONResponse({"error": "unauthorised"}, status_code=401)
+    return None
+
+
+async def _api_result(fn):
+    try:
+        return JSONResponse(await asyncio.to_thread(fn))
+    except (ValueError, TypeError) as exc:
+        return JSONResponse({"error": str(exc)}, status_code=422)
+    except ResearchError as exc:
+        return JSONResponse({"error": str(exc)}, status_code=502)
+
+
+@mcp.custom_route("/api/v1/research/search", methods=["GET"])
+async def search_research_api(request: Request):
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    params = request.query_params
+    return await _api_result(lambda: search_scholarship(
+        params.get("q", ""), int(params.get("limit", "10")), params.get("domain", "general")
+    ))
+
+
+@mcp.custom_route("/api/v1/research/dossier", methods=["POST"])
+async def dossier_research_api(request: Request):
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    body = await request.body()
+    if len(body) > 4000:
+        return JSONResponse({"error": "body too large"}, status_code=413)
+    try:
+        data = json.loads(body)
+        if not isinstance(data, dict):
+            raise ValueError("Expected JSON object")
+    except (ValueError, UnicodeDecodeError):
+        return JSONResponse({"error": "invalid JSON object"}, status_code=400)
+    return await _api_result(lambda: research_dossier(
+        data.get("question", ""), data.get("limit", 10), data.get("domain", "general")
+    ))
+
+
+@mcp.custom_route("/api/v1/research/doi", methods=["GET"])
+async def doi_research_api(request: Request):
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    return await _api_result(lambda: lookup_doi_metadata(request.query_params.get("doi", "")))
+
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health(_request: Request):
