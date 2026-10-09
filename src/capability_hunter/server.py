@@ -13,6 +13,8 @@ from .analysis import compare, discover, inspect, make_context_pack, propose_int
 from .catalogue import connect, list_records
 from .github import GitHubClient
 from .task_router import compile_task
+from .domain_router import plan_specialist_tools
+from .domain_discovery import discover_specialist_repositories
 from .research import ResearchError, search_scholarship, research_dossier, lookup_doi_metadata
 from .evolution import DiscoveryRequiredError, run_research
 
@@ -145,6 +147,16 @@ async def doi_research_api(request: Request):
         return denied
     return await _api_result(lambda: lookup_doi_metadata(request.query_params.get("doi", "")))
 
+
+@mcp.tool()
+def route_domain_specialists(task: str, max_candidates: int = 5) -> dict:
+    """Choose a specialist domain and a provisional ranked shortlist; no code execution."""
+    return plan_specialist_tools(task, max_candidates)
+
+@mcp.tool()
+def discover_domain_specialists(task: str, limit: int = 5) -> dict:
+    """Check GitHub metadata and run bounded specialist repo searches. Not installation."""
+    return discover_specialist_repositories(task, limit)
 
 @mcp.custom_route("/api/v1/research/auto", methods=["POST"])
 async def auto_research_api(request: Request):

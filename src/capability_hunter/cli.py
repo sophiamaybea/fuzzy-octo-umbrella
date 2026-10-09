@@ -8,6 +8,8 @@ from .analysis import compare, discover, inspect, make_context_pack, propose_int
 from .catalogue import connect, list_records, review, upsert
 from .github import GitHubClient
 from .task_router import compile_task
+from .domain_router import plan_specialist_tools
+from .domain_discovery import discover_specialist_repositories
 
 def dump(value):
     print(json.dumps(value, indent=2, ensure_ascii=False))
@@ -50,7 +52,16 @@ def main():
     p.add_argument("task")
     p.add_argument("--tool", action="append", default=[], help="Caller-reported tool, not verified")
 
+    p = subs.add_parser("specialist", help="Propose domain-specific tools without installing code")
+    p.add_argument("task")
+    p.add_argument("--live", action="store_true", help="Check candidate metadata and search GitHub")
+    p.add_argument("--limit", type=int, default=5)
+
     args = parser.parse_args()
+    if args.cmd == "specialist":
+        dump(discover_specialist_repositories(args.task, args.limit) if args.live
+             else plan_specialist_tools(args.task, args.limit))
+        return
     if args.cmd == "compile":
         dump(compile_task(args.task, args.tool))
         return

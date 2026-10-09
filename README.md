@@ -70,6 +70,9 @@ Set the Authorization header to Bearer YOUR_RESEARCH_API_KEY. Do not put secrets
 
 The existing Dockerfile, Render blueprint and /mcp path are reused. Hosted MCP authentication and quotas are **not yet implemented**, so restrict deployment access before large-scale production use.
 
+## Domain-first specialist discovery
+
+Use `capability-hunter specialist 'analyse single-cell RNA-seq data'` for a local, deterministic domain→subfield→tool plan. Add `--live` to verify curated repository metadata and discover further current candidates on public GitHub. Via the deployed read-only MCP gateway, `route_domain_specialists` and `discover_domain_specialists` expose these two steps. The `compile` command also incorporates the specialist path into the execution brief. Biology coverage includes single-cell omics, RNA-seq, genetics, molecular modelling, drug discovery, biomedical sources, microbiome, microscopy and neuroscience. This ranks *plausible candidates* and plans further discovery; it does not empirically determine a universal winner or install specialist software. Extend `domain_router.py` with other fields after source and test review.
 
 ## GitHub-first research and continuous capability evolution (v0.3)
 

@@ -10,6 +10,8 @@ import json
 import re
 from typing import Sequence
 
+from .domain_router import plan_specialist_tools
+
 DOMAINS: dict[str, dict] = {
     "software": {
         "terms": (r"\b(code|coding|script|python|javascript|typescript|github|repository|repo|api|mcp|app|website|build|deploy|bug|test|integration)\b",),
@@ -67,13 +69,25 @@ def compile_task(task: str, available_tools: Sequence[str] | None = None) -> dic
             raise ValueError("Tool names must be non-empty strings of at most 120 characters")
         tools.append(item.strip())
 
+    specialty = plan_specialist_tools(task)
     domains = [name for name, cfg in DOMAINS.items()
                if any(re.search(term, task, flags=re.IGNORECASE) for term in cfg["terms"])]
+    if specialty["domain"] == "biology":
+        domains.insert(0, "biology")
     if not domains:
         domains = ["general"]
 
     candidates = []
     seen: set[str] = set()
+    for suggestion in specialty["suggested_repositories_not_connected"]:
+        repo = suggestion["repo"]
+        seen.add(repo)
+        candidates.append({
+            "repository": repo,
+            "status": "SUGGESTION_ONLY_NOT_INSTALLED",
+            "specialist_purpose": suggestion["reason"],
+            "next_step": "Verify exact-task performance and environment compatibility before connecting.",
+        })
     for category in domains:
         for repo in DOMAINS.get(category, {}).get("candidates", ()):
             if repo not in seen:
@@ -98,6 +112,10 @@ def compile_task(task: str, available_tools: Sequence[str] | None = None) -> dic
         "Proceed without needless confirmation; ask only if a necessary decision truly cannot be inferred.",
         "",
         "Detected task domains: " + ", ".join(domains),
+        "Specialist path: " + specialty["domain"] + " -> " + ", ".join(specialty.get("subfields", [])),
+        "Specialist shortlist is provisional and unbenchmarked: " +
+        ", ".join(x["repo"] for x in specialty["suggested_repositories_not_connected"]),
+        "After each execution step, detect the next capability gap and repeat bounded specialist discovery.",
         "Suggested checks: " + ("; ".join(questions) if questions else "Infer from the actual request."),
         "Caller-reported tools (verify live before using): " + (", ".join(tools) if tools else "none supplied"),
         "",
@@ -111,6 +129,7 @@ def compile_task(task: str, available_tools: Sequence[str] | None = None) -> dic
     return {
         "original_request": task,
         "domains": domains,
+        "specialist_route": specialty,
         "caller_reported_tools_unverified": tools,
         "github_candidates_not_installed": candidates,
         "stages": list(STAGES),
