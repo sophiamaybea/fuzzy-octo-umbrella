@@ -14,6 +14,7 @@ from .catalogue import connect, list_records
 from .github import GitHubClient
 from .task_router import compile_task
 from .domain_router import plan_specialist_tools
+from .neuroimaging import plan_neuroimaging_research
 from .domain_discovery import discover_specialist_repositories
 from .research import ResearchError, search_scholarship, research_dossier, lookup_doi_metadata
 from .evolution import DiscoveryRequiredError, run_research
@@ -146,6 +147,16 @@ async def doi_research_api(request: Request):
     if denied is not None:
         return denied
     return await _api_result(lambda: lookup_doi_metadata(request.query_params.get("doi", "")))
+
+
+@mcp.tool()
+def plan_neuroimaging_study(question: str) -> dict:
+    """Design an evidence-aware, non-diagnostic study; NO scan upload or image access.
+
+    Do not send patient names, case details or other identifiable health information
+    to a publicly hosted or unprotected gateway.
+    """
+    return plan_neuroimaging_research(question)
 
 
 @mcp.tool()

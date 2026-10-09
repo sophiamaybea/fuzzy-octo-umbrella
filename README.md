@@ -105,3 +105,22 @@ The `Continuous capability evolution` workflow executes hourly (GitHub scheduled
 - **ChatGPT behaviour:** connecting the deployed MCP and placing `prompts/GITHUB_FIRST_RESEARCH.md` in your Project instructions can guide ChatGPT to call it. A repository cannot override the ChatGPT product or force global use across all conversations.
 
 Do not put identifying medical records, unpublished documents or private user questions into a **public** repository's workflow inputs or artefacts. For sensitive projects use local execution or a private deployment with access control. Treat GitHub search results as untrusted data and all heuristic rankings as provisional.
+
+
+## Neuroimaging research (non-diagnostic)
+
+The new neuroimaging router recognises MRI, fMRI, DTI, DICOM, NIfTI, brain anatomy
+and structural/functional imaging questions. Use `capability-hunter imaging-plan
+"Research structural MRI associations with behaviour"` or the text-only MCP tool
+`plan_neuroimaging_study` for modality-specific, source-aware study plans.
+
+For authorised data **on your own machine**, opt in with `pip install -e
+'.[imaging]'` and use `capability-hunter imaging-inspect /path/to/scan.nii.gz`
+(or one `.dcm` instance). For pre-existing validated binary NIfTI segmentation masks,
+`capability-hunter imaging-mask-volume /path/to/mask.nii.gz` quantifies the
+ROI volume using image geometry, locally and without uploading scan data.
+The header inspector itself reads no voxel data. Neither command finds
+lesions, decodes thoughts, infers motivations or provides diagnoses.
+No remote MCP scan upload endpoint has been added. See
+[the neuroimaging guide](docs/neuroimaging-research.md) for privacy safeguards,
+upstream candidates, scientific limitations and proposed validated pipelines.
