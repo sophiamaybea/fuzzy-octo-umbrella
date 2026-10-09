@@ -48,3 +48,24 @@ See `SECURITY.md` and `AGENTS.md`. Project licensed MIT. Third-party licences re
 ## Capability-aware task execution briefs
 
 Run `capability-hunter compile 'your task'` to generate a structured, faithful task brief without model or network calls. With the deployed MCP gateway connected, assistants can call `compile_task_brief`. Copy [the reusable orchestration prompt](prompts/AUTO_CAPABILITY_ORCHESTRATOR.md) into a supported instruction context to guide actual execution with already-connected tools. See [prompt optimisation architecture](docs/prompt-optimisation.md). The compiler does **not** improve the model's weights or automatically install GitHub tools.
+
+
+## Research MCP and REST API (v0.2)
+
+Capability Hunter now has a scholarly research adapter that searches [OpenAlex](https://help.openalex.org/api/), [Crossref](https://www.crossref.org/documentation/retrieve-metadata/rest-api/), and [Europe PMC](https://europepmc.org/RestfulWebService). It works for general academic and biomedical literature, although it does **not** search all relevant books, philosophy archives, websites, primary records or licensed papers.
+
+**MCP tools** (available alongside the existing GitHub tools after the service is deployed):
+- search_scholarly_literature(question, limit=10, domain="general")
+- build_research_dossier(question, limit=10, domain="biomedical")
+- look_up_paper_doi(doi)
+
+These tools return DOI-linked records, source provenance, dates, short abstracts where available and a verification checklist. This is **evidence discovery**, not an autonomous literature review, experimental execution, claim validation, or a direct installation of Stanford Biomni.
+
+**REST API** (requires RESEARCH_API_KEY set as a hosting secret; otherwise research HTTP routes return 503):
+- GET /api/v1/research/search?q=critical%20reasoning&limit=10&domain=general
+- POST /api/v1/research/dossier (JSON: {"question":"postpartum psychosis risk","domain":"biomedical","limit":10})
+- GET /api/v1/research/doi?doi=10.1234%2Fexample
+
+Set the Authorization header to Bearer YOUR_RESEARCH_API_KEY. Do not put secrets in browser JavaScript or the repository. Optional provider settings: OPENALEX_API_KEY, CROSSREF_CONTACT_EMAIL. See docs/research-gateway.md for setup and limitations.
+
+The existing Dockerfile, Render blueprint and /mcp path are reused. Hosted MCP authentication and quotas are **not yet implemented**, so restrict deployment access before large-scale production use.
