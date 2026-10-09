@@ -4,7 +4,7 @@
 
 This is a **research-oriented, non-diagnostic** pathway from a question about brain
 structure, function or possible correlates of behaviour to appropriate tools and
-testable hypotheses. It offers two executable primitives:
+testable hypotheses. It offers three executable primitives:
 
 1. `imaging-plan` locally, or `plan_neuroimaging_study` over MCP, builds a
    modality-aware, evidence-conscious study protocol, selecting relevant
@@ -12,6 +12,11 @@ testable hypotheses. It offers two executable primitives:
 2. `imaging-inspect` **locally only**, opens a single NIfTI or DICOM image
    *header* and emits a small, explicit, allowlisted JSON summary of geometry
    and acquisition information. It does **not** inspect voxels or abnormalities.
+3. `imaging-mask-volume` **locally only**, measures the physical size of a
+   pre-existing, verified, binary 3D NIfTI segmentation/ROI mask. It checks
+   millimetre spatial units, affine geometry and binary voxels, and returns
+   an explicit voxel count and volume. It does **not** create the mask,
+   identify an anatomical region, or infer pathology.
 
 It does **not** currently perform segmentation, brain parcellation, cortical
 thickness estimation, tractography, functional connectivity estimation or a
@@ -27,6 +32,7 @@ pip install -e '.[imaging,dev]'
 capability-hunter imaging-plan "Study links between MRI structure and measured cognitive flexibility"
 capability-hunter imaging-inspect /private/authorised/deidentified/scan.nii.gz
 capability-hunter imaging-inspect /private/authorised/deidentified/one-instance.dcm
+capability-hunter imaging-mask-volume /private/authorised/deidentified/verified-roi-mask.nii.gz
 pytest -q tests/test_neuroimaging.py
 ```
 
@@ -35,6 +41,8 @@ ChatGPT, the deployed research API or the MCP service. File paths are input
 arguments to the **locally installed** CLI, not to a remote container.
 
 The CLI output excludes filenames, patient fields, names, dates and DICOM UIDs.
+The mask-volume command examines an existing mask's voxels entirely locally;
+its volumetric result is only as meaningful as the upstream segmentation.
 The actual source file remains untouched and **may still contain identifying
 information**, including embedded pixel text. The program **does not**
 de-identify the original. DICOM inspection is *one instance*, not a full
