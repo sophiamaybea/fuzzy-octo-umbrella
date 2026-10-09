@@ -16,6 +16,7 @@ from .task_router import compile_task
 from .domain_router import plan_specialist_tools
 from .domain_discovery import discover_specialist_repositories
 from .research import ResearchError, search_scholarship, research_dossier, lookup_doi_metadata
+from .evolution import DiscoveryRequiredError, run_research
 
 mcp = MCPServer("GitHub Capability Hunter")
 
@@ -80,6 +81,17 @@ def look_up_paper_doi(doi: str) -> dict:
     return lookup_doi_metadata(doi)
 
 
+@mcp.tool()
+def research_with_fresh_github_discovery(
+    task: str, limit: int = 6, include_literature: bool = True
+) -> dict:
+    """MANDATORY fresh GitHub repository search before scholarly source discovery.
+
+    Each call searches and inspects current GitHub candidates. Never installs tools.
+    """
+    return run_research(task, limit, include_literature)
+
+
 def _require_research_key(request: Request):
     key = os.getenv("RESEARCH_API_KEY", "")
     if not key:
@@ -94,7 +106,7 @@ async def _api_result(fn):
         return JSONResponse(await asyncio.to_thread(fn))
     except (ValueError, TypeError) as exc:
         return JSONResponse({"error": str(exc)}, status_code=422)
-    except ResearchError as exc:
+    except (ResearchError, DiscoveryRequiredError) as exc:
         return JSONResponse({"error": str(exc)}, status_code=502)
 
 
@@ -145,6 +157,26 @@ def route_domain_specialists(task: str, max_candidates: int = 5) -> dict:
 def discover_domain_specialists(task: str, limit: int = 5) -> dict:
     """Check GitHub metadata and run bounded specialist repo searches. Not installation."""
     return discover_specialist_repositories(task, limit)
+
+@mcp.custom_route("/api/v1/research/auto", methods=["POST"])
+async def auto_research_api(request: Request):
+    """GitHub-first research; bearer-key guard applies to all REST access."""
+    denied = _require_research_key(request)
+    if denied is not None:
+        return denied
+    body = await request.body()
+    if len(body) > 4000:
+        return JSONResponse({"error": "body too large"}, status_code=413)
+    try:
+        data = json.loads(body)
+        if not isinstance(data, dict):
+            raise ValueError("expected object")
+    except (ValueError, UnicodeDecodeError):
+        return JSONResponse({"error": "invalid JSON object"}, status_code=400)
+    return await _api_result(lambda: run_research(
+        data.get("task", ""), data.get("limit", 6), data.get("include_literature", True)
+    ))
+
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health(_request: Request):
