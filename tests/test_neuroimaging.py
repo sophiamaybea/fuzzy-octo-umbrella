@@ -115,3 +115,51 @@ def test_unsupported_format_and_nonexistent_path(tmp_path):
         inspect_local_imaging_header(str(file))
     with pytest.raises(ValueError, match="not found"):
         inspect_local_imaging_header(str(tmp_path / "not_found.nii"))
+
+
+def test_quantitative_binary_mask_volume_from_real_synthetic_nifti(tmp_path):
+    import numpy as np
+    import nibabel as nib
+    from capability_hunter.neuroimaging import measure_local_binary_roi_mask
+
+    voxels = np.zeros((3, 4, 5), dtype=np.uint8)
+    voxels[1, 2, 1:3] = 1
+    affine = np.diag([2.0, 3.0, 4.0, 1.0])
+    img = nib.Nifti1Image(voxels, affine=affine)
+    img.header.set_xyzt_units(xyz="mm")
+    private_filename = tmp_path / "PERSON_ID_123_mask.nii.gz"
+    nib.save(img, str(private_filename))
+
+    result = measure_local_binary_roi_mask(str(private_filename))
+    assert result["mask_voxel_count"] == 2
+    assert result["voxel_volume_mm3"] == 24.0
+    assert result["mask_volume_mm3"] == 48.0
+    assert result["mask_volume_ml"] == 0.048
+    assert "PERSON_ID_123" not in str(result)
+    assert result["raw_image_uploaded"] is False
+
+
+def test_quantitative_mask_rejects_unsegmented_data(tmp_path):
+    import numpy as np
+    import nibabel as nib
+    from capability_hunter.neuroimaging import measure_local_binary_roi_mask
+
+    img = nib.Nifti1Image(np.full((3, 3, 3), 0.5), affine=np.eye(4))
+    img.header.set_xyzt_units(xyz="mm")
+    filename = tmp_path / "invalid_mask.nii"
+    nib.save(img, str(filename))
+    with pytest.raises(ValueError, match="must be binary"):
+        measure_local_binary_roi_mask(str(filename))
+
+
+def test_quantitative_mask_requires_explicit_spatial_units(tmp_path):
+    import numpy as np
+    import nibabel as nib
+    from capability_hunter.neuroimaging import measure_local_binary_roi_mask
+
+    img = nib.Nifti1Image(np.ones((2, 2, 2), dtype=np.uint8), affine=np.eye(4))
+    img.header.set_xyzt_units(xyz="unknown")
+    filename = tmp_path / "unknown_units.nii.gz"
+    nib.save(img, str(filename))
+    with pytest.raises(ValueError, match="millimetre spatial units"):
+        measure_local_binary_roi_mask(str(filename))
