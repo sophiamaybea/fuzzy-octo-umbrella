@@ -19,10 +19,20 @@ BIOLOGY_SIGNALS = (
     r"\bepigenetic\w*\b", r"\btranscriptom\w*\b", r"\bmetabolom\w*\b",
     r"\bclinical trials?\b", r"\bPubMed\b", r"\bmicroscop\w*\b",
     r"\bmolecular biology\b",
+    r"\bneuroimag\w*\b", r"\bmedical imag\w*\b", r"\bDICOM\b",
+    r"\bNIfTI\b", r"\bbrain MRI\b", r"\bbrain scan\w*\b",
+    r"\bstructural MRI\b", r"\bbrain morphometr\w*\b",
 )
 
 # Specialized signals are ordered by *precision*, not claimed scientific quality.
 SUBFIELDS = {
+    "neuroimaging": (
+        r"\bneuroimag\w*\b", r"\bmedical imag\w*\b", r"\bDICOM\b",
+        r"\bNIfTI\b", r"\bMRI\b", r"\bfMRI\b", r"\bDTI\b",
+        r"\bdiffusion MRI\b", r"\bbrain scan\w*\b", r"\bbrain imag\w*\b",
+        r"\bcortical thickness\b", r"\bbrain structur\w*\b",
+        r"\bbrain morphometr\w*\b", r"\bwhite.matter tract\w*\b",
+    ),
     "single_cell": (
         r"\bsingle.cell\b", r"\bscRNA.seq\b", r"\bscATAC\b",
         r"\bcell.type annotat\w*\b", r"\bcell cluster\w*\b",
@@ -67,6 +77,16 @@ SUBFIELDS = {
 # Each entry points to a public repository verified at curation time.
 # Priority reflects suitability for the subfield, NOT comparative benchmark scores.
 BIOLOGY_CANDIDATES = {
+    "neuroimaging": (
+        ("nipy/nibabel", "NIfTI and other neuroimaging format headers and arrays"),
+        ("pydicom/pydicom", "DICOM metadata inspection with de-identification requirements"),
+        ("nilearn/nilearn", "group-level functional brain imaging statistics"),
+        ("nipreps/fmriprep", "standardised fMRI preprocessing and visual QC"),
+        ("freesurfer/freesurfer", "structural cortical and subcortical morphometry"),
+        ("PennLINC/qsiprep", "diffusion MRI preprocessing"),
+        ("Project-MONAI/MONAI", "validated model-dependent medical image segmentation"),
+        ("bids-standard/pybids", "BIDS-format brain imaging dataset indexing"),
+    ),
     "general": (
         ("mims-harvard/ToolUniverse", "scientific tool discovery and orchestration"),
         ("snap-stanford/Biomni", "general biomedical agent workflow"),
