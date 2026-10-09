@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "capability-hunter"
-version = "0.1.0"
+version = "0.2.0"
 description = "A source-linked GitHub capability discovery, review and MCP gateway"
 readme = "README.md"
 requires-python = ">=3.11"
