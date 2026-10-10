@@ -117,3 +117,17 @@ Philosophy Engine v0.2 `/v1/inquiry` endpoint. It remains disabled until an
 administrator configures an authenticated HTTPS engine and explicitly opts in.
 The workflow updates **candidate observations**, not installed packages or model
 weights; third-party code changes always require review and tested integration.
+
+## OpenClaw income operator (opt-in)
+
+A reviewable **OpenClaw workspace skill** and offline opportunity scoring engine now live in [skills/income-operator/SKILL.md](skills/income-operator/SKILL.md) and [docs/income-engine.md](docs/income-engine.md). They help investigate legitimate funding routes, verify opportunity evidence, estimate unit economics and stop unsafe or unapproved actions. There is also a read-only integration with Superteam Earn's documented agent-eligible listings API (private agent key required).
+
+```sh
+python -m pip install -e '.[dev]'
+python -m pytest -q tests/test_income.py tests/test_superteam.py
+python -m capability_hunter.income --input examples/income-opportunities.sample.json
+# On a separate authorised OpenClaw runtime only:
+openclaw skills install ./skills/income-operator
+```
+
+**Not an OpenClaw installation or live revenue bot.** External discovery, registration, submissions, contracts and payouts require independent user-controlled accounts and verified permissions. No income is guaranteed or has been received through this integration. Never add private marketplace keys or customer data to this public repository.
