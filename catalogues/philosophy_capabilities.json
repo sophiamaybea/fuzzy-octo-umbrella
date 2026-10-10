@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "scope": "PHILOSOPHY_ONLY",
+  "warning": "These are UNVERIFIED discovery candidates, not installed integrations or learned model weights.",
+  "families": {
+    "argument_mapping": {
+      "examples": "Argdown",
+      "intended_use": "argument reconstruction, premise-conclusion graphs"
+    },
+    "computational_argumentation": {
+      "examples": "Carneades",
+      "intended_use": "defeat relations and admissibility semantics"
+    },
+    "guided_deliberation": {
+      "examples": "Logikon",
+      "intended_use": "structured multi-perspective reasoning"
+    },
+    "formal_logic": {
+      "examples": "Carnap, Lean 4, Z3",
+      "intended_use": "proof checking and formal counterexamples"
+    },
+    "research": {
+      "examples": "STORM / Co-STORM",
+      "intended_use": "source-grounded exploratory research"
+    },
+    "evaluation": {
+      "examples": "Stanford HELM",
+      "intended_use": "repeatable effectiveness benchmarks"
+    }
+  },
+  "candidates": [
+    {
+      "repo": "0x4m4/hexstrike-ai",
+      "url": "https://github.com/0x4m4/hexstrike-ai",
+      "description": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+ cybersecurity tools for automated pentesting, vulnerability discovery, bug bounty automation, and security research. Seamlessly bridge LLMs with real-world offensive security capabilities.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "0xNyk/awesome-hermes-agent",
+      "url": "https://github.com/0xNyk/awesome-hermes-agent",
+      "description": "Independent directory of useful skills, plugins, memory providers, tools, surfaces, and guides for Nous Research's open-source Hermes Agent.",
+      "licence_reported": "NOASSERTION",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "2b3pro/roam-research-mcp",
+      "url": "https://github.com/2b3pro/roam-research-mcp",
+      "description": "MCP Server and CLI tool for Roam Research Graph Integration",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "Alibaba-NLP/DeepResearch",
+      "url": "https://github.com/Alibaba-NLP/DeepResearch",
+      "description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent",
+      "licence_reported": "Apache-2.0",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "Finance-LLMs/deep-research-python",
+      "url": "https://github.com/Finance-LLMs/deep-research-python",
+      "description": "MCP tool for deep web research",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "HKUDS/Auto-Deep-Research",
+      "url": "https://github.com/HKUDS/Auto-Deep-Research",
+      "description": "\"Your Fully-Automated Personal AI Assistant\"",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "LuxAlgo/luxalgo-mcp-server",
+      "url": "https://github.com/LuxAlgo/luxalgo-mcp-server",
+      "description": "The LuxAlgo ecosystem as MCP tools: free and keyless.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "NVIDIA-AI-Blueprints/deep-researcher-agent",
+      "url": "https://github.com/NVIDIA-AI-Blueprints/deep-researcher-agent",
+      "description": "The NVIDIA Deep Researcher Agent Blueprint is an open reference example for building intelligent AI agents that connect to your enterprise data, reason using state-of-the-art models, and deliver trusted business insights.",
+      "licence_reported": "Apache-2.0",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "OpenOSINT/OpenOSINT",
+      "url": "https://github.com/OpenOSINT/OpenOSINT",
+      "description": "AI-powered OSINT agent with interactive REPL, MCP server, and CLI. 20 tools. Works with Claude, GPT-4, or local models. For authorized security research only.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "SkyworkAI/DeepResearchAgent",
+      "url": "https://github.com/SkyworkAI/DeepResearchAgent",
+      "description": "DeepResearchAgent is a hierarchical multi-agent system designed not only for deep research tasks but also for general-purpose task solving. The framework leverages a top-level planning agent to coordinate multiple specialized lower-level agents, enabling automated task decomposition and efficient execution across diverse and complex domains.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "UKPLab/emnlp2018-argmin-commonsense-knowledge",
+      "url": "https://github.com/UKPLab/emnlp2018-argmin-commonsense-knowledge",
+      "description": "Accompanying code for our paper \"Frame- and Entity-Based Knowledge for Common-Sense Argumentative Reasoning\" at the 5th Workshop on Argument Mining @ EMNLP 2018.",
+      "licence_reported": "Apache-2.0",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "aipoch/open-science",
+      "url": "https://github.com/aipoch/open-science",
+      "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
+      "licence_reported": "Apache-2.0",
+      "source_tree_sha": "7e6fa0b414f2f0fd1411479531c9e313991f9b54",
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "alan-killie/The-Logos-Anchor",
+      "url": "https://github.com/alan-killie/The-Logos-Anchor",
+      "description": "AI governance framework anchored to Logos. Not rules — reason. Includes Socratic Veto, Preservation Protocol, and tiered premise evaluation. Truth-seeking as the primary safeguard.",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
+      "licence_reported": "Apache-2.0",
+      "source_tree_sha": "0957c301ed06c2a5857b834358c7227c739041d4",
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "dzhng/deep-research",
+      "url": "https://github.com/dzhng/deep-research",
+      "description": "An AI-powered research assistant that performs iterative, deep research on any topic by combining search engines, web scraping, and large language models.  The goal of this repo is to provide the simplest implementation of a deep research agent - e.g. an agent that can refine its research direction overtime and deep dive into a topic.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "nickscamara/open-deep-research",
+      "url": "https://github.com/nickscamara/open-deep-research",
+      "description": "An open source deep research clone. AI Agent that reasons large amounts of web data extracted with Firecrawl",
+      "licence_reported": "NOASSERTION",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "virattt/dexter",
+      "url": "https://github.com/virattt/dexter",
+      "description": "An autonomous agent for deep financial research",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "zqshizhiqiang/topological_argument_mining",
+      "url": "https://github.com/zqshizhiqiang/topological_argument_mining",
+      "description": "This repository accompanies the paper: Topological Ordering for Explicit Global Structural Reasoning in Argument Relation Identification",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    }
+  ]
+}
