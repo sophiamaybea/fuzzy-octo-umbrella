@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-10T15:32:59.646710+00:00",
+  "updated_at_utc": "2026-10-10T19:28:39.883788+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -8,14 +8,14 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "pushed_at": "2026-10-10T15:28:13Z",
+      "pushed_at": "2026-10-10T16:21:26Z",
       "stars": 5500,
       "heuristic_score": 94.96,
-      "source_tree_sha": "6db81a12cb83acaa0d5ee66fb5005eab5837ba73",
+      "source_tree_sha": "218f7a185d52bc4fc64e69a0bdb2e0159a86f6c8",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "synthetic-sciences/openscience",
@@ -23,13 +23,13 @@
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-10-10T12:26:51Z",
-      "stars": 3963,
+      "stars": 3964,
       "heuristic_score": 94.39,
       "source_tree_sha": "a7b9fa3a8c1bd52a9a0c171de58bc14759a0f850",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "beita6969/ScienceClaw",
@@ -42,8 +42,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -56,8 +56,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -70,8 +70,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -126,8 +126,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     },
     {
       "repo": "hherb/biomedmcp",
@@ -150,12 +150,12 @@
       "licence_reported": "GPL-3.0",
       "pushed_at": "2025-11-22T15:59:50Z",
       "stars": 7,
-      "heuristic_score": 68.99,
+      "heuristic_score": 68.96,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-10T15:32:59.646710+00:00",
-      "observations": 3
+      "last_seen_utc": "2026-10-10T19:28:39.883788+00:00",
+      "observations": 4
     }
   ]
 }
