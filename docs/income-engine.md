@@ -94,3 +94,16 @@ Example, **not an offer**: a $200 funded task estimated at 4 hours has *continge
 - Evidence of demand for automation services: https://www.upwork.com/research/upwork-monthly-hiring-insights-august-2026
 
 These are reference sources, not evidence of any particular active paid job.
+
+## Verified agent-specific source: Superteam Earn
+
+Unlike conventional marketplaces, **Superteam Earn explicitly supports agent-eligible listings** (`AGENT_ALLOWED` / `AGENT_ONLY`) through a documented HTTPS API. Official developer instructions: https://superteam.fun/earn/agents . The endpoint covers bounties, projects and hackathons; the platform's claim process requires a real human. This makes it a plausible place to use OpenClaw for evidence gathering, drafting, engineering and preparation, while keeping submissions and payments human-approved.
+
+This change also adds `src/capability_hunter/superteam.py` and network-mocked tests. The module reads the exact published `GET /api/agents/listings/live` route and returns bounded raw listings with retrieval timestamps; it **does not** guess the platform's field schema, guarantee availability, submit work, create accounts or hold a wallet. A key from an independently registered agent is necessary:
+
+```sh
+# Configure SUPERTEAM_EARN_AGENT_API_KEY as a private host secret (never commit it)
+python -m capability_hunter.superteam --take 20 --type bounty --output /private/listings.json
+```
+
+No agent key has been requested or used; only mocked API calls were tested. Payouts described in USDC or other digital assets introduce conversion, legal/tax and custody considerations even when no upfront capital is required. Follow programme terms, verify award criteria, avoid impersonation and do not send duplicate low-effort AI submissions.
