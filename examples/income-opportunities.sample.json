@@ -1,0 +1,24 @@
+[
+  {
+    "title": "FICTIONAL example: fix a paid open-source issue",
+    "url": "https://example.org/issues/123",
+    "payout_usd": "150",
+    "hours_estimate": "3",
+    "cash_cost_usd": "0",
+    "success_probability": null,
+    "eligibility_confirmed": false,
+    "payout_confirmed": false,
+    "evidence_note": "Synthetic fixture, not a live paid opportunity. Verify availability and payment terms.",
+    "requires_upfront_payment": false
+  },
+  {
+    "title": "FICTIONAL example: deliver a customer FAQ assistant",
+    "url": "https://example.org/projects/456",
+    "payout_usd": "400",
+    "hours_estimate": "8",
+    "cash_cost_usd": "0",
+    "eligibility_confirmed": false,
+    "payout_confirmed": false,
+    "evidence_note": "Hypothetical fee for illustrating unit economics, not a client or accepted quote."
+  }
+]
