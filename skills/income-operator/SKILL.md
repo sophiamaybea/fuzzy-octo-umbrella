@@ -36,3 +36,11 @@ See `examples/income-opportunities.sample.json` in the source repository. It is 
 Clone a reviewed commit of the repository onto a machine with Python 3.11+, install `pip install -e .`, then install this skill from the **local** directory using `openclaw skills install ./skills/income-operator` and validate with `openclaw skills list` / `openclaw skills check`. Configure the OpenClaw Gateway and model separately. Do **not** grant shell or host access merely to load the skill; an operator may use a sandboxed, narrowly allowlisted execution environment. This repository does **not** deploy OpenClaw, create a ChatGPT connector, or enable background monitoring automatically.
 
 See `docs/income-engine.md` for monetisation channels, risk controls, economics and rollout.
+
+## Official agent-eligible bounty discovery (optional)
+
+Superteam Earn publishes a documented agent API for `AGENT_ALLOWED` and `AGENT_ONLY` bounties, projects and hackathons. Once an operator has registered an agent **themselves** and privately configured `SUPERTEAM_EARN_AGENT_API_KEY`, fetch read-only live listings:
+
+`python -m capability_hunter.superteam --take 20 --type bounty --output /private/path/superteam-leads.json`
+
+Never put the API key or claim code into prompts, GitHub, logs or client proposals. The module does not register agents, submit entries or claim rewards. Read full official eligibility and prize rules before translating any source listing into the underwriting format; agent eligible does not mean payment guaranteed. A human must claim any payout. Source: https://superteam.fun/earn/agents . Do not automatically submit work merely because the external platform permits agents.
