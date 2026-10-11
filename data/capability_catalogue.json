@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-11T09:14:19.574340+00:00",
+  "updated_at_utc": "2026-10-11T15:55:16.101771+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -8,14 +8,14 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "pushed_at": "2026-10-11T09:11:01Z",
-      "stars": 5508,
-      "heuristic_score": 94.96,
-      "source_tree_sha": "78ef2336e3190a2f3111f6eefe51023456911136",
+      "pushed_at": "2026-10-11T15:49:02Z",
+      "stars": 5513,
+      "heuristic_score": 94.97,
+      "source_tree_sha": "80e3ab06f3ed31812caeb15d145e8a257c7f447a",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "synthetic-sciences/openscience",
@@ -24,12 +24,12 @@
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-10-10T12:26:51Z",
       "stars": 3967,
-      "heuristic_score": 94.39,
+      "heuristic_score": 94.32,
       "source_tree_sha": "a7b9fa3a8c1bd52a9a0c171de58bc14759a0f850",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "beita6969/ScienceClaw",
@@ -37,13 +37,13 @@
       "description": "Verifiable program-level self-evolution for AI-for-Science agents: Skills and typed Operators grow from replay-verified executions.",
       "licence_reported": "MIT",
       "pushed_at": "2026-10-08T13:18:54Z",
-      "stars": 945,
-      "heuristic_score": 91.76,
+      "stars": 948,
+      "heuristic_score": 91.71,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -51,13 +51,13 @@
       "description": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
       "licence_reported": "MIT",
       "pushed_at": "2026-09-17T05:39:52Z",
-      "stars": 1938,
+      "stars": 1939,
       "heuristic_score": 91.56,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -66,12 +66,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
       "stars": 944,
-      "heuristic_score": 86.87,
+      "heuristic_score": 86.82,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -122,12 +122,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-01T10:57:48Z",
       "stars": 28,
-      "heuristic_score": 75.24,
+      "heuristic_score": 75.17,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-11T09:14:19.574340+00:00",
-      "observations": 7
+      "last_seen_utc": "2026-10-11T15:55:16.101771+00:00",
+      "observations": 8
     }
   ]
 }
