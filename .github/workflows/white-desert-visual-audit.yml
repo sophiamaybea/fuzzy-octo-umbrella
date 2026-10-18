@@ -1,0 +1,35 @@
+name: White Desert Visual Audit
+on:
+  pull_request:
+    paths:
+      - "tools/white-desert/**"
+      - ".github/workflows/white-desert-visual-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium and visual comparison dependencies
+        run: |
+          npm install --no-package-lock --prefix /tmp/white-desert-audit playwright@1.56.1 pixelmatch@7.1.0 pngjs@7.0.0
+          cd /tmp/white-desert-audit
+          npx playwright install --with-deps chromium
+      - name: Capture original and reproduction
+        run: |
+          ln -s /tmp/white-desert-audit/node_modules tools/white-desert/node_modules
+          node tools/white-desert/audit.mjs
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: white-desert-visual-audit
+          path: audit-output/
+          if-no-files-found: warn
+          retention-days: 7
