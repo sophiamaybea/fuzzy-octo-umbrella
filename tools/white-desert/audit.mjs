@@ -4,7 +4,7 @@ import {chromium} from 'playwright';
 import pixelmatch from 'pixelmatch';
 import {PNG} from 'pngjs';
 const dir='audit-output';await fs.mkdir(dir,{recursive:true});
-const pages=[['original','https://white-desert.com/'],['clone','https://white-desert-measured-reconstruction.vercel.app/']];
+const pages=[['original','https://white-desert.com/'],['clone','https://white-desert-measured-reconstructio.vercel.app/']];
 const sizes=[['desktop',1440,900],['tablet',834,1112],['mobile',390,844]],stops=[0,.1,.25,.5,.75,1];
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const result=[];
@@ -38,6 +38,6 @@ for(const [device,width,height] of sizes){
  }catch(e){result.push({device,scrollPercent:Math.round(stops[i]*100),error:String(e)})}
 }
 await browser.close();
-const text=['# White Desert measured visual comparison','','Source: https://white-desert.com/','Clone: https://white-desert-measured-reconstruction.vercel.app/','','Note: The same scroll percentages can represent different content because page heights differ. These scores are diagnostics, not a fidelity certification.','','| Device | Scroll | Difference |','|---|---:|---:|'];
+const text=['# White Desert measured visual comparison','','Source: https://white-desert.com/','Clone: https://white-desert-measured-reconstructio.vercel.app/','','Note: The same scroll percentages can represent different content because page heights differ. These scores are diagnostics, not a fidelity certification.','','| Device | Scroll | Difference |','|---|---:|---:|'];
 for(const r of result)text.push('| '+r.device+' | '+(r.scrollPercent??'?')+'% | '+(r.differencePercent??r.error??'error')+' |');
 await fs.writeFile(path.join(dir,'REPORT.md'),text.join('\n'));await fs.writeFile(path.join(dir,'summary.json'),JSON.stringify(result,null,2));console.log(text.join('\n'));
