@@ -17,8 +17,10 @@ for(const [device,width,height] of sizes){
   const stem=device+'-'+site;
   try{
    const res=await tab.goto(url,{waitUntil:'domcontentloaded',timeout:55000});await sleep(4500);
+   if(site==='original'){const reject=tab.getByRole('button',{name:/^reject$/i});if(await reject.count()){await reject.first().click({timeout:4000}).catch(()=>{});await sleep(800)}}
+   const meta=await tab.evaluate(()=>({images:[...document.querySelectorAll('img')].map(el=>({url:el.currentSrc||el.src,alt:el.alt,rect:(()=>{const a=el.getBoundingClientRect();return [Math.round(a.x),Math.round(a.y),Math.round(a.width),Math.round(a.height)]})()})),videos:[...document.querySelectorAll('video')].map(v=>({src:v.currentSrc,poster:v.poster,readyState:v.readyState,paused:v.paused,muted:v.muted})),fonts:[...document.fonts].slice(0,30).map(f=>({family:f.family,weight:f.weight,status:f.status}))}));
    const nodes=await tab.evaluate(()=>{const names=['h1','h2','nav','header','section','video','canvas'];return Object.fromEntries(names.map(name=>[name,[...document.querySelectorAll(name)].slice(0,24).map(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return {text:(el.textContent||'').trim().slice(0,120),font:s.fontFamily,fontSize:s.fontSize,lineHeight:s.lineHeight,letterSpacing:s.letterSpacing,opacity:s.opacity,position:s.position,width:Math.round(r.width),height:Math.round(r.height),x:Math.round(r.x),y:Math.round(r.y)}})]))});
-   await fs.writeFile(path.join(dir,stem+'-source.json'),JSON.stringify({url,httpStatus:res?.status(),title:await tab.title(),network,errors,nodes},null,2));
+   await fs.writeFile(path.join(dir,stem+'-source.json'),JSON.stringify({url,httpStatus:res?.status(),title:await tab.title(),network,errors,nodes,meta},null,2));
    for(let i=0;i<stops.length;i++){await tab.evaluate(p=>window.scrollTo(0,Math.round((document.documentElement.scrollHeight-innerHeight)*p)),stops[i]);await sleep(1500);await tab.screenshot({path:path.join(dir,stem+'-'+i+'.png'),fullPage:false,timeout:30000})}
    console.log('CAPTURE',stem,'HTTP',res?.status(),'assets',network.length);
   }catch(e){console.error('ERROR',stem,e.message);result.push({device,site,error:e.message});await fs.writeFile(path.join(dir,stem+'-error.txt'),String(e))}
