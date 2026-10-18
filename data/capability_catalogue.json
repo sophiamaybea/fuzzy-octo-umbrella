@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-18T09:50:20.377069+00:00",
+  "updated_at_utc": "2026-10-18T14:07:32.439159+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -8,14 +8,14 @@
       "url": "https://github.com/synthetic-sciences/openscience",
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
-      "pushed_at": "2026-10-18T08:00:31Z",
-      "stars": 4065,
+      "pushed_at": "2026-10-18T11:25:02Z",
+      "stars": 4071,
       "heuristic_score": 94.44,
-      "source_tree_sha": "6a85742115f43c37925f3645a4d5eff991b8555a",
+      "source_tree_sha": "493f9261f94ba6ea1fa29b8df82c0ba515a9bf1e",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "beita6969/ScienceClaw",
@@ -24,12 +24,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-10-16T13:19:00Z",
       "stars": 1014,
-      "heuristic_score": 91.96,
+      "heuristic_score": 91.89,
       "source_tree_sha": "e925f732c7ca435f557e88075bc47a58f1e984f1",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -37,13 +37,13 @@
       "description": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
       "licence_reported": "MIT",
       "pushed_at": "2026-09-17T05:39:52Z",
-      "stars": 1969,
+      "stars": 1970,
       "heuristic_score": 91.14,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "IAmAaronYang/saluteface-public",
@@ -56,8 +56,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-14T13:58:44.468570+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 25
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 26
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -65,13 +65,13 @@
       "description": "A curated, multilingual library of 182 installable AI agent skills for end-to-end academic research—spanning literature discovery, scientific writing, grant development, bioinformatics, drug discovery, clinical research, machine learning, and data analysis.",
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
-      "stars": 961,
-      "heuristic_score": 86.52,
+      "stars": 964,
+      "heuristic_score": 86.48,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -122,12 +122,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-01T10:57:48Z",
       "stars": 28,
-      "heuristic_score": 74.78,
+      "heuristic_score": 74.71,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-18T09:50:20.377069+00:00",
-      "observations": 44
+      "last_seen_utc": "2026-10-18T14:07:32.439159+00:00",
+      "observations": 45
     },
     {
       "repo": "AlterLab-IEU/AlterLab-Academic-Skills",
