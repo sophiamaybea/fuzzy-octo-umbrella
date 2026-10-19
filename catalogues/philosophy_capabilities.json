@@ -122,7 +122,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "75497c5fbc7bed8fe590e5215b7cf99cb4f74993",
+      "source_tree_sha": "c8918e95a90afd751e6a7363a6fef83a027f0d47",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
@@ -154,6 +154,14 @@
       "url": "https://github.com/nickscamara/open-deep-research",
       "description": "An open source deep research clone. AI Agent that reasons large amounts of web data extracted with Firecrawl",
       "licence_reported": "NOASSERTION",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "rrrrrredy/research-toolkit",
+      "url": "https://github.com/rrrrrredy/research-toolkit",
+      "description": "Research methods, workflow tools, and independent review for AI agents, packaged as a Skill, plugin, and local MCP server.",
+      "licence_reported": "MIT",
       "source_tree_sha": null,
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
