@@ -110,6 +110,14 @@
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
+      "repo": "Tchapwo1/socratic-evaluator",
+      "url": "https://github.com/Tchapwo1/socratic-evaluator",
+      "description": "Socratic reasoning, moral philosophy dilemma benchmark & dialectical essay evaluation engine (Kant, Sartre, Plato, Hegel)",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
       "repo": "UKPLab/emnlp2018-argmin-commonsense-knowledge",
       "url": "https://github.com/UKPLab/emnlp2018-argmin-commonsense-knowledge",
       "description": "Accompanying code for our paper \"Frame- and Entity-Based Knowledge for Common-Sense Argumentative Reasoning\" at the 5th Workshop on Argument Mining @ EMNLP 2018.",
@@ -122,7 +130,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "19cd639d737eb4de917bdc1b996f906825c1e321",
+      "source_tree_sha": "3dcd56ca7b06fdad934ad176a300c66ac7263365",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
