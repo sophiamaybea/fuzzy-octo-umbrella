@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-23T07:53:12.510341+00:00",
+  "updated_at_utc": "2026-10-23T13:45:16.229824+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -9,13 +9,13 @@
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-10-23T04:18:40Z",
-      "stars": 4241,
+      "stars": 4242,
       "heuristic_score": 94.51,
       "source_tree_sha": "d720862157d146d52b6faae1e5aff9d3973ed918",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "beita6969/ScienceClaw",
@@ -24,12 +24,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-10-16T13:19:00Z",
       "stars": 1018,
-      "heuristic_score": 91.62,
+      "heuristic_score": 91.56,
       "source_tree_sha": "e925f732c7ca435f557e88075bc47a58f1e984f1",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -37,27 +37,27 @@
       "description": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
       "licence_reported": "MIT",
       "pushed_at": "2026-09-17T05:39:52Z",
-      "stars": 1986,
+      "stars": 1988,
       "heuristic_score": 90.84,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "AlterLab-IEU/AlterLab-Academic-Skills",
       "url": "https://github.com/AlterLab-IEU/AlterLab-Academic-Skills",
       "description": "242 evaluated academic Claude/agent skills across 18 research domains — bioinformatics, cheminformatics, data science, databases, clinical, social science, Turkish academia & more. Every skill ships an executable eval. Citation verifier, research→write→review pipeline, 7 multi-agent workflows. Claude Code plugins; also Cursor, Codex, Gemini CLI.",
       "licence_reported": "MIT",
-      "pushed_at": "2026-10-14T19:53:58Z",
+      "pushed_at": "2026-10-23T13:40:03Z",
       "stars": 78,
-      "heuristic_score": 87.05,
+      "heuristic_score": 87.59,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-12T06:25:13.780030+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 25
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 26
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -66,12 +66,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
       "stars": 974,
-      "heuristic_score": 86.28,
+      "heuristic_score": 86.23,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -122,12 +122,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-20T09:55:23Z",
       "stars": 28,
-      "heuristic_score": 75.71,
+      "heuristic_score": 75.65,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-23T07:53:12.510341+00:00",
-      "observations": 71
+      "last_seen_utc": "2026-10-23T13:45:16.229824+00:00",
+      "observations": 72
     },
     {
       "repo": "IAmAaronYang/saluteface-public",
