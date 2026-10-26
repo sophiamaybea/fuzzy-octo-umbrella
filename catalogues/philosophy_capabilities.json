@@ -62,6 +62,14 @@
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
+      "repo": "AlmaSena/SPADE_arg",
+      "url": "https://github.com/AlmaSena/SPADE_arg",
+      "description": "SPADE plugin for LLM-based argumentative reasoning. It uses argument mining and multi-agent debate to analyse opposing viewpoints and synthesise conclusions.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
       "repo": "Finance-LLMs/deep-research-python",
       "url": "https://github.com/Finance-LLMs/deep-research-python",
       "description": "MCP tool for deep web research",
@@ -130,7 +138,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "3b5e94b61d9e8df3250326a26708902bdfffef7e",
+      "source_tree_sha": "bca63c44af08616044101e0f0c93bcdcb5ddf78f",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
