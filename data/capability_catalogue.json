@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-26T06:52:47.558066+00:00",
+  "updated_at_utc": "2026-10-26T14:31:16.382760+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -9,27 +9,27 @@
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-10-26T05:20:56Z",
-      "stars": 4251,
-      "heuristic_score": 94.51,
+      "stars": 4255,
+      "heuristic_score": 94.52,
       "source_tree_sha": "c971e7f215aad154f3f27087ab9904a10154d9cc",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "beita6969/ScienceClaw",
       "url": "https://github.com/beita6969/ScienceClaw",
       "description": "Verifiable program-level self-evolution for AI-for-Science agents: Skills and typed Operators grow from replay-verified executions.",
       "licence_reported": "MIT",
-      "pushed_at": "2026-10-16T13:19:00Z",
+      "pushed_at": "2026-10-26T13:28:19Z",
       "stars": 1019,
-      "heuristic_score": 91.42,
+      "heuristic_score": 92.03,
       "source_tree_sha": "e925f732c7ca435f557e88075bc47a58f1e984f1",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -42,8 +42,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -51,13 +51,13 @@
       "description": "A curated, multilingual library of 182 installable AI agent skills for end-to-end academic research—spanning literature discovery, scientific writing, grant development, bioinformatics, drug discovery, clinical research, machine learning, and data analysis.",
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
-      "stars": 979,
-      "heuristic_score": 86.13,
+      "stars": 980,
+      "heuristic_score": 86.08,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -70,8 +70,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "MineSelf2016/biological_agents_survey",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-23T22:33:39.140637+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 16
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 17
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -122,12 +122,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-20T09:55:23Z",
       "stars": 28,
-      "heuristic_score": 75.51,
+      "heuristic_score": 75.44,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -135,13 +135,13 @@
       "description": "A curated collection of AI agent skills for biomedical research, covering genomics, proteomics, single-cell analysis, clinical AI, and protein design.",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-07-01T21:21:45Z",
-      "stars": 207,
-      "heuristic_score": 72.46,
+      "stars": 208,
+      "heuristic_score": 72.47,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-10-26T06:52:47.558066+00:00",
-      "observations": 89
+      "last_seen_utc": "2026-10-26T14:31:16.382760+00:00",
+      "observations": 90
     },
     {
       "repo": "AlterLab-IEU/AlterLab-Academic-Skills",
