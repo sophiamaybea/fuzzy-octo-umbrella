@@ -134,11 +134,19 @@
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
+      "repo": "ZeroPointRepo/awesome-hermes-skills",
+      "url": "https://github.com/ZeroPointRepo/awesome-hermes-skills",
+      "description": "Hermes Agent skills and plugins: 350+ tools, memory providers, and guides for Nous Research's agent.",
+      "licence_reported": "MIT",
+      "source_tree_sha": null,
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
       "repo": "aipoch/open-science",
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "0f4330548e9eaad2c3ce10c42c82ee80854e61ae",
+      "source_tree_sha": "23898639b2004e7032c5d3fce1d90bd9c9250d34",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
