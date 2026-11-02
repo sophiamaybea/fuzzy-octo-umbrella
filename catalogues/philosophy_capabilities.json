@@ -146,7 +146,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "f997328907d5612d51110b2f1d519796236ca0e7",
+      "source_tree_sha": "b37704bbd2962aff2352c7328bf555db44345950",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
