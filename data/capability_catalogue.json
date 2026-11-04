@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-04T11:28:37.766312+00:00",
+  "updated_at_utc": "2026-11-04T18:48:47.822804+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -8,14 +8,14 @@
       "url": "https://github.com/synthetic-sciences/openscience",
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
-      "pushed_at": "2026-11-03T08:19:56Z",
-      "stars": 4335,
-      "heuristic_score": 94.48,
+      "pushed_at": "2026-11-04T14:27:55Z",
+      "stars": 4338,
+      "heuristic_score": 94.55,
       "source_tree_sha": "a08e0ad0ad3d6448123039ee4659163eb2e35d99",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -28,8 +28,8 @@
       "source_tree_sha": "686e09dfdb45d9fa1a08664f06bb93769b3c9d91",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -38,12 +38,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
       "stars": 1005,
-      "heuristic_score": 85.71,
+      "heuristic_score": 85.66,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -56,8 +56,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 126
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 127
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -70,8 +70,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "MineSelf2016/biological_agents_survey",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-23T22:33:39.140637+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 54
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 55
     },
     {
       "repo": "KalarisLabs/research-agent-skills",
@@ -93,13 +93,13 @@
       "description": "Turn any AI agent into a research co-scientist: 280+ open-source agent skills for literature reviews, hypotheses, experimental design, data analysis, paper writing, citation verification and peer review. Claude Code, Codex, Cursor, Gemini CLI and any Agent Skills harness. npx skills add KalarisLabs/research-agent-skills",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-31T09:29:15Z",
-      "stars": 98,
-      "heuristic_score": 77.71,
+      "stars": 99,
+      "heuristic_score": 77.73,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-11-03T01:45:45.807639+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 6
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 7
     },
     {
       "repo": "olanokhin/openresearch-mcp",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -121,13 +121,13 @@
       "description": "MCP SDK v2 server for PubMed and multi-source biomedical research, with resilient search, full text, citations, and tenant-safe deployment.",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-20T09:55:23Z",
-      "stars": 28,
-      "heuristic_score": 74.84,
+      "stars": 29,
+      "heuristic_score": 74.9,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "hherb/biomedmcp",
@@ -150,12 +150,12 @@
       "licence_reported": "GPL-3.0",
       "pushed_at": "2025-11-22T15:59:50Z",
       "stars": 7,
-      "heuristic_score": 68.3,
+      "heuristic_score": 68.27,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-04T11:28:37.766312+00:00",
-      "observations": 127
+      "last_seen_utc": "2026-11-04T18:48:47.822804+00:00",
+      "observations": 128
     },
     {
       "repo": "beita6969/ScienceClaw",
