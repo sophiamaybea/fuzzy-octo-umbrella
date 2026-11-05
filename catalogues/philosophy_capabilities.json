@@ -146,7 +146,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "7757f5488ed8e638bddfdbaedf58a5dc6912194f",
+      "source_tree_sha": "0a2571061b7fea7bef4caf7a9490a4d6a7348f80",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
@@ -163,6 +163,14 @@
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "licence_reported": "Apache-2.0",
       "source_tree_sha": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "status": "UNREVIEWED_NOT_INSTALLED"
+    },
+    {
+      "repo": "chrisPiemonte/argonaut",
+      "url": "https://github.com/chrisPiemonte/argonaut",
+      "description": "Argument Mining from online debates and hybrid-semantics reasoning",
+      "licence_reported": "UNKNOWN",
+      "source_tree_sha": null,
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
