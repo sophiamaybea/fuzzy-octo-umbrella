@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-05T22:13:06.804827+00:00",
+  "updated_at_utc": "2026-11-06T02:46:37.350569+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -14,8 +14,8 @@
       "source_tree_sha": "a08e0ad0ad3d6448123039ee4659163eb2e35d99",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -28,8 +28,22 @@
       "source_tree_sha": "686e09dfdb45d9fa1a08664f06bb93769b3c9d91",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
+    },
+    {
+      "repo": "Consensus-NLP/consensus-mcp",
+      "url": "https://github.com/Consensus-NLP/consensus-mcp",
+      "description": "Official Consensus MCP server. Semantic search over 400M+ research papers, including all of PubMed, for Claude, ChatGPT, Cursor and any MCP client.",
+      "licence_reported": "MIT",
+      "pushed_at": "2026-11-05T23:18:02Z",
+      "stars": 31,
+      "heuristic_score": 86.02,
+      "source_tree_sha": null,
+      "status": "CANDIDATE_NOT_INSTALLED",
+      "first_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 1
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -42,8 +56,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -52,12 +66,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-09-01T22:45:16Z",
       "stars": 24,
-      "heuristic_score": 81.57,
+      "heuristic_score": 81.51,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 131
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 132
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -66,12 +80,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-09-06T22:26:56Z",
       "stars": 17,
-      "heuristic_score": 81.29,
+      "heuristic_score": 81.23,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
     },
     {
       "repo": "KalarisLabs/research-agent-skills",
@@ -79,13 +93,13 @@
       "description": "Turn any AI agent into a research co-scientist: 280+ open-source agent skills for literature reviews, hypotheses, experimental design, data analysis, paper writing, citation verification and peer review. Claude Code, Codex, Cursor, Gemini CLI and any Agent Skills harness. npx skills add KalarisLabs/research-agent-skills",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-11-05T18:33:39Z",
-      "stars": 103,
-      "heuristic_score": 78.07,
+      "stars": 104,
+      "heuristic_score": 78.08,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-11-03T01:45:45.807639+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 11
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 12
     },
     {
       "repo": "MineSelf2016/biological_agents_survey",
@@ -94,26 +108,12 @@
       "licence_reported": "UNKNOWN",
       "pushed_at": "2026-10-30T23:10:14Z",
       "stars": 116,
-      "heuristic_score": 77.93,
+      "heuristic_score": 77.86,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-23T22:33:39.140637+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 59
-    },
-    {
-      "repo": "olanokhin/openresearch-mcp",
-      "url": "https://github.com/olanokhin/openresearch-mcp",
-      "description": "Zero-auth, security-hardened cross-domain research MCP server: web, academic, GitHub, news, weather, macro/finance, SEC, biomedical, Bluesky, YouTube. SSRF and prompt-injection defenses.",
-      "licence_reported": "Apache-2.0",
-      "pushed_at": "2026-07-08T21:22:46Z",
-      "stars": 12,
-      "heuristic_score": 77.46,
-      "source_tree_sha": null,
-      "status": "CANDIDATE_NOT_INSTALLED",
-      "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 60
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -126,8 +126,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -135,13 +135,13 @@
       "description": "A curated collection of AI agent skills for biomedical research, covering genomics, proteomics, single-cell analysis, clinical AI, and protein design.",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-07-01T21:21:45Z",
-      "stars": 215,
-      "heuristic_score": 71.99,
+      "stars": 216,
+      "heuristic_score": 72.0,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-05T22:13:06.804827+00:00",
-      "observations": 132
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
     },
     {
       "repo": "hherb/biomedmcp",
@@ -151,6 +151,20 @@
       "pushed_at": "2025-11-22T15:59:50Z",
       "stars": 7,
       "heuristic_score": 68.25,
+      "source_tree_sha": null,
+      "status": "CANDIDATE_NOT_INSTALLED",
+      "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
+      "last_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "observations": 133
+    },
+    {
+      "repo": "olanokhin/openresearch-mcp",
+      "url": "https://github.com/olanokhin/openresearch-mcp",
+      "description": "Zero-auth, security-hardened cross-domain research MCP server: web, academic, GitHub, news, weather, macro/finance, SEC, biomedical, Bluesky, YouTube. SSRF and prompt-injection defenses.",
+      "licence_reported": "Apache-2.0",
+      "pushed_at": "2026-07-08T21:22:46Z",
+      "stars": 12,
+      "heuristic_score": 77.46,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
