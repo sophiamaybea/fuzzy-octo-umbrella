@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-08T07:53:08.834397+00:00",
+  "updated_at_utc": "2026-11-08T15:31:58.612019+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -9,13 +9,13 @@
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-11-08T06:48:39Z",
-      "stars": 4355,
+      "stars": 4357,
       "heuristic_score": 94.56,
       "source_tree_sha": "a08e0ad0ad3d6448123039ee4659163eb2e35d99",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -23,13 +23,13 @@
       "description": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
       "licence_reported": "MIT",
       "pushed_at": "2026-09-17T05:39:52Z",
-      "stars": 2026,
+      "stars": 2028,
       "heuristic_score": 89.91,
       "source_tree_sha": "686e09dfdb45d9fa1a08664f06bb93769b3c9d91",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "Consensus-NLP/consensus-mcp",
@@ -42,8 +42,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-11-06T02:46:37.350569+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 10
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 11
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -51,13 +51,13 @@
       "description": "A curated, multilingual library of 182 installable AI agent skills for end-to-end academic research—spanning literature discovery, scientific writing, grant development, bioinformatics, drug discovery, clinical research, machine learning, and data analysis.",
       "licence_reported": "MIT",
       "pushed_at": "2026-07-20T11:43:50Z",
-      "stars": 1018,
-      "heuristic_score": 85.53,
+      "stars": 1019,
+      "heuristic_score": 85.47,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -70,8 +70,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 141
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 142
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -84,8 +84,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "KalarisLabs/research-agent-skills",
@@ -98,8 +98,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-11-03T01:45:45.807639+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 21
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 22
     },
     {
       "repo": "MineSelf2016/biological_agents_survey",
@@ -112,8 +112,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-23T22:33:39.140637+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 69
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 70
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -122,12 +122,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-10-20T09:55:23Z",
       "stars": 29,
-      "heuristic_score": 74.71,
+      "heuristic_score": 74.64,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -140,8 +140,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-08T07:53:08.834397+00:00",
-      "observations": 142
+      "last_seen_utc": "2026-11-08T15:31:58.612019+00:00",
+      "observations": 143
     },
     {
       "repo": "olanokhin/openresearch-mcp",
