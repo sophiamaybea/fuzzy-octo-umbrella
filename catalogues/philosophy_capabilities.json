@@ -146,7 +146,7 @@
       "url": "https://github.com/aipoch/open-science",
       "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "2b780af5503ba7e3b3f5ae06fd4cfb07a81a72b4",
+      "source_tree_sha": "3f01daff516640b6d1242df0fdb8bbf704aaa484",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://github.com/assafelovic/gpt-researcher",
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "licence_reported": "Apache-2.0",
-      "source_tree_sha": "b81060b2d5f382b30a0ea9d95bf799fd9835c34e",
+      "source_tree_sha": "ddd4db36208d9c8e49f3b2436efda97baecb5433",
       "status": "UNREVIEWED_NOT_INSTALLED"
     },
     {
