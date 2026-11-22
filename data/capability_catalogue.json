@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-22T17:59:45.393914+00:00",
+  "updated_at_utc": "2026-11-22T23:46:05.192010+00:00",
   "description": "Unverified external repo suggestions; NO auto-install or approval",
   "candidates": [
     {
@@ -9,13 +9,13 @@
       "description": "The open-source AI workbench for scientific research",
       "licence_reported": "Apache-2.0",
       "pushed_at": "2026-11-21T20:18:35Z",
-      "stars": 4412,
-      "heuristic_score": 94.58,
+      "stars": 4413,
+      "heuristic_score": 94.51,
       "source_tree_sha": "dbb60cba76afa518941a70ec4c25febba3114f4b",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "aipoch/medical-research-skills",
@@ -28,8 +28,8 @@
       "source_tree_sha": "e12621d6a3bdc8ef2def65d467bcf0590cbf761a",
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "u9401066/pubmed-search-mcp",
@@ -42,22 +42,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
-    },
-    {
-      "repo": "Consensus-NLP/consensus-mcp",
-      "url": "https://github.com/Consensus-NLP/consensus-mcp",
-      "description": "Official Consensus MCP server. Semantic search over 400M+ research papers, including all of PubMed, for Claude, ChatGPT, Cursor and any MCP client.",
-      "licence_reported": "MIT",
-      "pushed_at": "2026-11-05T23:18:02Z",
-      "stars": 30,
-      "heuristic_score": 84.9,
-      "source_tree_sha": null,
-      "status": "CANDIDATE_NOT_INSTALLED",
-      "first_seen_utc": "2026-11-06T02:46:37.350569+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 59
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "LeonChaoX/qinyan-academic-skills",
@@ -70,8 +56,22 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
+    },
+    {
+      "repo": "Consensus-NLP/consensus-mcp",
+      "url": "https://github.com/Consensus-NLP/consensus-mcp",
+      "description": "Official Consensus MCP server. Semantic search over 400M+ research papers, including all of PubMed, for Claude, ChatGPT, Cursor and any MCP client.",
+      "licence_reported": "MIT",
+      "pushed_at": "2026-11-05T23:18:02Z",
+      "stars": 30,
+      "heuristic_score": 84.83,
+      "source_tree_sha": null,
+      "status": "CANDIDATE_NOT_INSTALLED",
+      "first_seen_utc": "2026-11-06T02:46:37.350569+00:00",
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 60
     },
     {
       "repo": "pascalwhoop/medical-mcps",
@@ -80,12 +80,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-09-01T22:45:16Z",
       "stars": 25,
-      "heuristic_score": 80.68,
+      "heuristic_score": 80.63,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 190
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 191
     },
     {
       "repo": "omar-A-hassan/medsci-agent",
@@ -94,12 +94,12 @@
       "licence_reported": "MIT",
       "pushed_at": "2026-09-06T22:26:56Z",
       "stars": 17,
-      "heuristic_score": 80.32,
+      "heuristic_score": 80.27,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "KalarisLabs/research-agent-skills",
@@ -107,13 +107,13 @@
       "description": "Turn any AI agent into a research co-scientist: 280+ open-source agent skills for literature reviews, hypotheses, experimental design, data analysis, paper writing, citation verification and peer review. Claude Code, Codex, Cursor, Gemini CLI and any Agent Skills harness. npx skills add KalarisLabs/research-agent-skills",
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-11-19T15:46:14Z",
-      "stars": 182,
-      "heuristic_score": 78.85,
+      "stars": 183,
+      "heuristic_score": 78.86,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-11-03T01:45:45.807639+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 70
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 71
     },
     {
       "repo": "MineSelf2016/biological_agents_survey",
@@ -126,8 +126,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-23T22:33:39.140637+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 118
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 119
     },
     {
       "repo": "BioTender-max/awesome-bio-agent-skills",
@@ -136,12 +136,12 @@
       "licence_reported": "NOASSERTION",
       "pushed_at": "2026-07-01T21:21:45Z",
       "stars": 227,
-      "heuristic_score": 71.33,
+      "heuristic_score": 71.28,
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "hherb/biomedmcp",
@@ -154,8 +154,8 @@
       "source_tree_sha": null,
       "status": "CANDIDATE_NOT_INSTALLED",
       "first_seen_utc": "2026-10-10T01:53:36.378088+00:00",
-      "last_seen_utc": "2026-11-22T17:59:45.393914+00:00",
-      "observations": 191
+      "last_seen_utc": "2026-11-22T23:46:05.192010+00:00",
+      "observations": 192
     },
     {
       "repo": "olanokhin/openresearch-mcp",
